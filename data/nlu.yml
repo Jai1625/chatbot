@@ -1,0 +1,182 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - who are you ?
+    - tell me about you
+    - what are you
+- intent: products_catalog
+  examples: |
+    - what are the products in kissflow ?
+    - what does kissflow has ?
+    - what does kissflow do ?
+    - what can i get from kissflow ?
+    - what kind of product you have ?
+    - what different type of product you can provide
+    - type of service you can offer
+    - what does kissflow has
+- intent: app_builder_basic
+  examples: |
+    - tell me about app builder
+    - what is app builder
+    - what is builder
+- intent: process_basic
+  examples: |
+    - tell me about process creation
+    - what is process
+    - what is process creation
+    - what are process used for
+- intent: form_basic
+  examples: |
+    - tell me about form creation
+    - what is form creation
+    - what is form
+    - what are form used for
+- intent: dashboard_basic
+  examples: |
+    - tell me about dashboard
+    - what is dashboard
+    - what is dashboard and why
+    - what are dashboard used for
+- intent: board_basic
+  examples: |
+    - tell me about board
+    - what is board
+    - what is board and why
+    - what are board used for
+- intent: collabration_basic
+  examples: |
+    - tell me about collabration
+    - what is collabration
+    - what is collabration and why
+    - what are collabration used for
+- intent: integration_basic
+  examples: |
+    - tell me about integration
+    - what is integration
+    - what is integration and why
+    - what are integration used for
+- intent: report_and_analytics_basic
+  examples: |
+    - tell me about report and analytics
+    - what is report
+    - what is analytics
+    - what is report used for
+    - what is analytics used for
+    - what is report and analytics and why
+    - what are report and analytics used for
+- intent: external_portal
+  examples: |
+    - what can external port do
+    - what is external portal
+    - what is external portal used for
+- intent: product_pricing
+  examples: |
+    - what are the plans you have
+    - what are the product pricing
+    - what are the different type of plan you have
+    - what are the pricing and user count for your product
+    - what are the catergories you have
+- intent: enterprise
+  examples: |
+    - tell me more about enterprise plan
+    - what about enterprise plan
+- intent: corporate
+  examples: |
+    - Tell me about coroprate plan
+    - what about coroprate plan
+- intent: small_bussiness
+  examples: |
+    - Tell me about small bussiness plan
+    - what about smal business plan
+- intent: contact_support
+  examples: |
+    - How can i connect with tech support
+    - Can you help me more
+    - Please connect with tech support
+    - can i connect with human
+- intent: book_demo
+  examples: |
+    - I would like to book the demo with your team
+    - book me a demo
+    - can i have a demo

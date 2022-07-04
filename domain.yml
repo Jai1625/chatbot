@@ -1,0 +1,178 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- products_catalog:
+    use_entities: true
+- app_builder_basic:
+    use_entities: true
+- process_basic:
+    use_entities: true
+- external_portal:
+    use_entities: true
+- report_and_analytics_basic:
+    use_entities: true
+- integration_basic:
+    use_entities: true
+- collabration_basic:
+    use_entities: true
+- board_basic:
+    use_entities: true
+- dashboard_basic:
+    use_entities: true
+- form_basic:
+    use_entities: true
+- product_pricing:
+    use_entities: true
+- small_bussiness:
+    use_entities: true
+- enterprise:
+    use_entities: true
+- corporate:
+    use_entities: true
+- contact_support:
+    use_entities: true
+- book_demo:
+    use_entities: true
+- network_issue:
+    use_entities: true
+entities:
+- name
+- number
+slots:
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  name:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  number:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+responses:
+  utter_greet:
+  - text: Hey there! How can i help you today?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am KF bot, i will clarify all your doubts regrading kissflow.
+  utter_show_products_catalog:
+  - buttons:
+    - payload: /app_builder_basic
+      title: App Builder
+    - payload: /process_basic
+      title: Process Creation
+    - payload: /dashboard_basic
+      title: Dashboard
+    - payload: /board_basic
+      title: Board Creation
+    - payload: /external_portal
+      title: External Portal
+    - payload: /form_basic
+      title: Form Creation
+    - payload: /integration_basic
+      title: Integration
+    - payload: /report_and_analytics_basic
+      title: Rport and Analytics
+    - payload: /collabration_basic
+      title: Collabration
+    text: we have Low-code No-code work platform, which can do the following things, click on the below buttons to know more
+  utter_app_builder_info:
+  - text: You can build comprehensive end-to-end apps with lowcode tool
+  utter_process_basic_info:
+  - text: you can create the process which automate the manual task
+  utter_external_portal:
+  - text: open up your core application to external user
+  utter_form_basic_info:
+  - text: You can create powerful form with simple visual builder
+  utter_dashboard_basic_info:
+  - text: you can put the key metrics and custom component in a single page
+  utter_board_basic_info:
+  - text: Get full visibility with project and case management
+  utter_integration_basic_info:
+  - text: Extend your capabilities with easy no-code connectors
+  utter_report_and_analytics_basic_info:
+  - text: Let the data guide you with deep insights and quick reports
+  utter_collabration_basic_info:
+  - text: Discuss work on same platform, where you work
+  utter_ask_NAME:
+  - text: Ok. Please provide your first name?
+  utter_ask_BRAND:
+  - text: Sir, I would like to tell you that your issues will be resolved. Could I please know which handset you are using?
+  utter_submit:
+  - text: Your name is {name} and your headset is {headset}. Is this correct?
+  utter_product_pricing_info:
+  - buttons:
+    - payload: /small_bussiness
+      title: Small Business plan
+    - payload: /corporate
+      title: Corporate Business plan
+    - payload: /contact_support
+      title: For enterprise click to contact our tech support
+    text: We have three catergories
+  utter_small_bussiness_info:
+  - buttons:
+    - payload: /contact_support
+      title: For more queries conect our tech support
+    text: For Small business we support upto 50 users with $9.90 per user per month
+  utter_coroprate_bussiness_info:
+  - buttons:
+    - payload: /contact_support
+      title: For more queries conect our tech support
+    text: For Corporate business we support upto 100 users with $20 per user per month
+  utter_contact_support:
+  - text: Redirecting to our tech support soon our team will connect with you
+  utter_ask_name:
+  - text: What is your name?
+  utter_details_thanks:
+  - text: |-
+      Thanks for providing the given details 
+      Name: {Name},
+      Mobile Number: {Mobile_number}
+  utter_ask_number:
+  - text: What is your mobile number?
+  utter_ask_email:
+  - text: What is your email?
+actions:
+- action_submit
+- action_video
+forms:
+  user_details_form:
+    required_slots:
+      name:
+      - entity: name
+        type: from_text
+      number:
+      - entity: number
+        type: from_text
+e2e_actions: []

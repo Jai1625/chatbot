@@ -1,0 +1,82 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: customer initial path 1
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: products_catalog
+    - action: utter_show_products_catalog
+    - intent: app_builder_basic
+    - action: utter_app_builder_info
+    - intent: process_basic
+    - action: utter_process_basic_info
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: products_catalog
+  - action: utter_show_products_catalog
+  - intent: app_builder_basic
+  - action: utter_app_builder_info
+
+  - intent: form_basic
+  - action: utter_form_basic_info
+  - intent: process_basic
+  - action: utter_process_basic_info
+
+  - intent: dashboard_basic
+  - action: utter_dashboard_basic_info
+  - intent: board_basic
+  - action: utter_board_basic_info
+
+  - intent: integration_basic
+  - action: utter_integration_basic_info
+  - intent: report_and_analytics_basic
+  - action: utter_report_and_analytics_basic_info
+
+  - intent: external_portal
+  - action: utter_external_portal
+  - intent: collabration_basic
+  - action: utter_collabration_basic_info
+#
+#- story: happy path
+#  steps:
+#  - intent: book_demo
+#  - action: form_info
+#  - active_loop: form_info
+#  - active_loop: null
+
+#- story: Activate form
+#  steps:
+#    - intent: book_demo
+#    - action: form_info_basic
+#    - active_loop: form_info_basic

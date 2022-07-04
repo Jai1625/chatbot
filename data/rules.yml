@@ -1,0 +1,92 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+- rule: Say the basic info about the product
+  steps:
+    - intent: products_catalog
+    - action: utter_show_products_catalog
+
+- rule: Say the basic info about the app builder
+  steps:
+    - intent: app_builder_basic
+    - action: utter_app_builder_info
+- rule: Say the basic info about the forms
+  steps:
+    - intent: form_basic
+    - action: utter_form_basic_info
+- rule: Say the basic info about the process
+  steps:
+    - intent: process_basic
+    - action: utter_process_basic_info
+- rule: Say the basic info about the dashboard
+  steps:
+    - intent: dashboard_basic
+    - action: utter_dashboard_basic_info
+- rule: Say the basic info about the board
+  steps:
+    - intent: board_basic
+    - action: utter_board_basic_info
+- rule: Say the basic info about the integration
+  steps:
+    - intent: integration_basic
+    - action: utter_integration_basic_info
+- rule: Say the basic info about the report
+  steps:
+    - intent: report_and_analytics_basic
+    - action: utter_report_and_analytics_basic_info
+- rule: Say the basic info about the external portal
+  steps:
+    - intent: external_portal
+    - action: utter_external_portal
+- rule: Say the basic info about the collabration
+  steps:
+    - intent: collabration_basic
+    - action: utter_collabration_basic_info
+- rule: Say the basic info about the product pricing
+  steps:
+    - intent: product_pricing
+    - action: utter_product_pricing_info
+
+- rule: Say the basic info about the small bussiness pricing
+  steps:
+    - intent: small_bussiness
+    - action: utter_small_bussiness_info
+- rule: Say the basic info about the corprate bussiness pricing
+  steps:
+    - intent: corporate
+    - action: utter_coroprate_bussiness_info
+
+- rule: Say this when they calls tech support
+  steps:
+    - intent: contact_support
+    - action: utter_contact_support
+#
+
+- rule: Activate form
+  steps:
+  - intent: book_demo
+  - action: user_details_form
+  - active_loop: user_details_form
+
+- rule: Submit form
+  condition:
+  # Condition that form is active.
+  - active_loop: user_details_form
+  steps:
+  # Form is deactivated
+  - action: user_details_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: action_submit
